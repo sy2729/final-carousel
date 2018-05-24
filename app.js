@@ -31,6 +31,23 @@ $('#next').on('click', function() {
 })
 
 
+let timer = setInterval(()=> {
+	goToSlide(current+1)
+}, 2000)
+
+$('.container').on('mouseenter', function() {
+	clearInterval(timer)
+}).on('mouseleave', function() {
+	timer = setInterval(()=> {
+		goToSlide(current+1)
+	}, 2000)	
+})
+
+
+
+
+
+
 
 function goToSlide(index) {
 
