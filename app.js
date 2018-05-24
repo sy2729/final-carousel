@@ -44,6 +44,17 @@ $('.container').on('mouseenter', function() {
 })
 
 
+$(document).on('visibilitychange', function() {
+	if(document.visibilityState === 'visible') {
+		timer = setInterval(()=> {
+			goToSlide(current+1)
+		}, 2000)
+	}else if(document.visibilityState === 'hidden') {
+		clearInterval(timer)
+	}
+
+})
+
 
 
 
@@ -56,11 +67,8 @@ function goToSlide(index) {
 	}else if (index < 0) {
 		index = length - 1;
 	}
-	console.log(index)
 
 	if(current === length - 1 && index === 0) {
-
-		console.log('special was trriggered')
 		$('.carousel').css({
 			transform:`translateX(${-(length + 1) * 530}px)`
 		}).one('transitionend', function() {
@@ -71,8 +79,6 @@ function goToSlide(index) {
 		})
 
 	}else if(current === 0 && index === length - 1) {
-
-		console.log('another case')
 		$('.carousel').css({
 			transform:`translateX(${0}px)`
 		}).one('transitionend', function() {
