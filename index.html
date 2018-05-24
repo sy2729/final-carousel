@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .wrap {
+            height: 430px;
+            width: 530px;
+            overflow: hidden;
+            margin: 40px auto;
+            position: relative;
+        }
+        .wrap > .carousel{
+            display: flex;
+            align-items: flex-start;
+            transition: all 1s ease-in-out;
+        }
+
+        .buttonWrap {
+            display: flex;
+            width: 400px;
+            margin: 0 auto;
+            justify-content: center;
+            position: relative;
+            margin-top: -80px;
+        }
+        .buttonWrap > div {
+            margin: 0 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            display: block;
+            cursor: pointer;
+            transition: all .5s;
+        }
+        .buttonWrap > div.active {
+            background: rgba(255, 0, 0, 0.6);
+        }
+
+
+        .control {
+        	
+        }
+
+        .control button{
+        	position: absolute;
+        	z-index: 2; 
+        	color: #fff;
+			background: rgba(0, 0, 0, 0.6);
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: none;
+			cursor: pointer;
+			top: 49%;
+        }
+
+        button#prev {
+			left: 20px;
+        }
+
+        button#next {
+			right: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+    	<div class="control">
+    		<button id="prev"><</button>
+    		<button id="next">></button>
+    	</div>
+        <div class="carousel">
+            <img src="./img/1.jpeg" alt="image">
+            <img src="./img/2.jpeg" alt="image">
+            <img src="./img/3.jpeg" alt="image">
+            <img src="./img/4.jpeg" alt="image">
+        </div>
+    </div>
+
+    <div class="buttonWrap">
+        
+    </div>
+
+
+    <script src="./jquery.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
